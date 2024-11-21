@@ -7,19 +7,7 @@ import { users } from '@/db/schema';
 export async function GET() {
   try {
 
-    const user = {
-      name: 'John',
-      email: 'john@example.com',
-    };
-
-    console.log('New user created!', users)
-
-    await NeonDb.insert(users).values(user);
-
     const allUsers = await NeonDb.select().from(users);
-    
-    console.log('allUsers---->', users)
-
     return NextResponse.json({ users: allUsers });
   } catch (error) {
     console.log('error------>', error)
@@ -35,7 +23,8 @@ export async function POST(request: Request) {
     const body = await request.json();
     const newUser = await NeonDb.insert(users).values(body).returning();
     return NextResponse.json({ user: newUser[0] }, { status: 201 });
-  } catch {
+  } catch (error){
+    console.log('error------>', error)
     return NextResponse.json(
       { error: 'Failed to create user' },
       { status: 500 }
