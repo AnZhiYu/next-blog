@@ -35,7 +35,7 @@ export async function POST(request: Request) {
     const body = await request.json();
     const newUser = await NeonDb.insert(users).values(body).returning();
     return NextResponse.json({ user: newUser[0] }, { status: 201 });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: 'Failed to create user' },
       { status: 500 }
