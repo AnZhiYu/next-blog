@@ -63,7 +63,7 @@ export default function Home() {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="p-4 max-w-4xl mx-auto">
+    <div className="p-4 max-w-8xl mx-auto">
       <h1 className="text-2xl font-bold mb-4">Users Management</h1>
 
       <form onSubmit={handleSubmit} className="mb-6 space-y-4">
