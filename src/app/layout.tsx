@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/app-sidebar";
+import { BreadcrumbCollapsed } from "@/components/app-breadcrumb";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -25,10 +27,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <SidebarProvider>
+          <AppSidebar />
+          <main className="p-3">
+            <div className="p-2 flex items-center">
+              <SidebarTrigger />
+              <BreadcrumbCollapsed></BreadcrumbCollapsed>
+            </div>
+            {children}
+          </main>
+        </SidebarProvider>
       </body>
     </html>
   );

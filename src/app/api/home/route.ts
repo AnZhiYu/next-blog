@@ -5,8 +5,7 @@ import { NextResponse } from 'next/server'
 export async function GET(request: Request) {
   console.log('request', request)
   // console.log('API endpoint hit!'); // 添加这行来确认API是否被调用
-  return NextResponse.json({  message: 'Hello from GET!'})
-  // return Response.json({ message: 'Hello from GET!' })
+  return NextResponse.json({  message: ''})
 }
 
 

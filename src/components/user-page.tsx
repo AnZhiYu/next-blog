@@ -2,6 +2,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button"
 
 interface User {
   id: number;
@@ -77,6 +78,7 @@ export default function Home() {
           Add User
         </button>
       </form>
+      <Button>Click me</Button>
 
       <div className="space-y-4">
         {users?.map((user) => (
