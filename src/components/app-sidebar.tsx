@@ -14,7 +14,7 @@ import {
 // Menu items.
 const items = [
   {
-    title: "Home",
+    title: "首页",
     url: "/",
     icon: Home,
   },
@@ -24,7 +24,7 @@ const items = [
     icon: Inbox,
   },
   {
-    title: "Calendar",
+    title: "百度",
     url: "#",
     icon: Calendar,
   },

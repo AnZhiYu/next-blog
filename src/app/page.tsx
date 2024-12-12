@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import { Suspense} from 'react';
 import HomeTitle from '@/components/home-title'
@@ -7,22 +8,14 @@ export default function Home() {
 
 
   return (
-    <div className="">
+    <div className="home">
       <main className="">
       <Suspense fallback={<div>loading...</div>}>
         <UsersPage></UsersPage>
         <HomeTitle></HomeTitle>
       </Suspense>
-        {/* <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        /> */}
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
+      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center mt-20">
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
