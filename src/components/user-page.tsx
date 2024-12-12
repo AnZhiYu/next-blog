@@ -2,7 +2,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button"
 
 interface User {
   id: number;
@@ -65,7 +64,7 @@ export default function Home() {
 
   return (
     <div className="p-4 max-w-8xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4">Users Management</h1>
+      <h1 className="text-2xl font-bold mb-4">用户管理</h1>
 
       <form onSubmit={handleSubmit} className="mb-6 space-y-4">
         <div>
@@ -75,10 +74,9 @@ export default function Home() {
           <input type="email" name="email" placeholder="Email" required className="border p-2 rounded w-full" />
         </div>
         <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-          Add User
+          添加
         </button>
       </form>
-      <Button>Click me</Button>
 
       <div className="space-y-4">
         {users?.map((user) => (
